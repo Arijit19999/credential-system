@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  issuance-api:
+    build:
+      context: ./issuance-api
+      dockerfile: Dockerfile
+    container_name: issuance-api
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - WORKER_ID=worker-docker-1
+    volumes:
+      - issuance-data:/app/data
+    restart: unless-stopped
+    networks:
+      - credential-network
+
+  verification-api:
+    build:
+      context: ./verification-api
+      dockerfile: Dockerfile
+    container_name: verification-api
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - WORKER_ID=verifier-docker-1
+    volumes:
+      - verification-data:/app/data
+      - issuance-data:/app/issuance-data:ro
+    restart: unless-stopped
+    networks:
+      - credential-network
+    depends_on:
+      - issuance-api
+
+volumes:
+  issuance-data:
+  verification-data:
+
+networks:
+  credential-network:
+    driver: bridge
