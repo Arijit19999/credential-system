@@ -1,19 +1,31 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A minimal setup to get **React** working in **Vite** with Hot Module Replacement (HMR) and a set of ESLint rules.
+
+---
+
+## 📦 Available Plugins
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Plugin | Fast Refresh Engine |
+| ------ | ------------------- |
+| [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) | [Babel](https://babeljs.io/) — or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown) |
+| [`@vitejs/plugin-react-swc`](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) | [SWC](https://swc.rs/) |
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚛️ React Compiler
 
-## Expanding the ESLint configuration
+The **React Compiler** is **not enabled** on this template because of its impact on dev and build performance.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To add it, see the [React Compiler installation guide](https://react.dev/learn/react-compiler/installation).
+
+---
+
+## 🔧 Expanding the ESLint Configuration
+
+If you are developing a **production application**, we recommend updating the configuration to enable **type-aware lint rules**:
 
 ```js
 export default defineConfig([
@@ -43,7 +55,9 @@ export default defineConfig([
 ])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### React-Specific Lint Rules
+
+You can also install [`eslint-plugin-react-x`](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [`eslint-plugin-react-dom`](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
